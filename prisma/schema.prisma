@@ -1,0 +1,19 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql" // use mysql 
+  url      = env("DATABASE_URL")
+}
+
+model record { // name tabel "record"
+  rec_id Int @id @default(autoincrement())
+  rec_regiscar String @unique
+  rec_brand String
+  rec_model String
+  rec_detail String
+  rec_create_at DateTime @default(now())
+  rec_update_at DateTime @updatedAt
+}
