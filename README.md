@@ -11,8 +11,9 @@
 
 ### Main path
 
-|Method--|Path-----------------------------|-------|------|------|
-|GET-----|http://localhost:8000/car--------|-------|------|------|
-|POST----|http://localhost:8000/car/add----|-------|------|------|
-|UPDATE--|http://localhost:8000/car/update-|-------|------|------|
-|DELETE--|http://localhost:8000/car/delete-|-------|------|------|
+|Method |Path | | | |
+| --- | --- | --- | --- | --- |
+| GET | http://localhost:8000/car | | | |
+| POST | http://localhost:8000/car/add | | | |
+| UPDATE | http://localhost:8000/car/update | | | |
+| DELETE | http://localhost:8000/car/delete | | | |
