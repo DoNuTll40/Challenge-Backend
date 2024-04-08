@@ -1,8 +1,8 @@
 
 ## prompt npm install package
-- npm i express cors dotenv nodemon bcryptjs jsonwebtoken
-- npm i prisma@latest
-- npm i @prisma/client
+- ```bash npm i express cors dotenv nodemon bcryptjs jsonwebtoken ```
+- ```bahs npm i prisma@latest ```
+- ```bash npm i @prisma/client ```
 
 ## database
 - MySQL
