@@ -8,6 +8,20 @@ exports.getAllUser = async (req, res, next) => {
   } catch (err) {
     next(err);
     console.log(err);
-    createError(400, "Error get user by Admin");
+  }
+};
+
+exports.deleteUserById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const del = await prisma.users.delete({
+      where: {
+        user_id: +id,
+      },
+    });
+    res.json({ message: "Delete users success!" })
+  } catch (err) {
+    next(err);
+    console.log(err);
   }
 };

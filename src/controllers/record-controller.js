@@ -7,6 +7,9 @@ exports.getAllRecord = async (req, res, next) => {
     const get = await prisma.record.findMany({
         orderBy: {
             rec_create_at: "desc"
+        },
+        include: {
+            users: true
         }
     });
     res.json({ get, message: "Get all record success!" });
