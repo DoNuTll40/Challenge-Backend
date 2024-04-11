@@ -9,7 +9,6 @@ const admin = async (req, res, next) => {
   } catch (err) {
     next(err);
     console.log(err);
-    createError(400, "Error permisstion");
   }
 };
 
