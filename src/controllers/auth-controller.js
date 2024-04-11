@@ -17,8 +17,14 @@ exports.registerUsers = async (req, res, next) => {
 
     const isUserExist = await userServices.getUserByEmail(value.user_email);
 
+    const isPhoneExist = await userServices.checkPhone(value.user_phone);
+
     if (isUserExist) {
-      return createError(400, "User already exist");
+      return createError(400, "มีผู้ใช้งานบัญชีนี้แล้ว");
+    }
+
+    if (isPhoneExist) {
+      return createError(400, "มีผู้ใช้เบอร์โทรนี้แล้ว");
     }
 
     const hasPassword = await bcrypt.hash(user_password, 10);

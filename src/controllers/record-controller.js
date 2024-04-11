@@ -19,6 +19,21 @@ exports.getAllRecord = async (req, res, next) => {
   }
 };
 
+exports.getRecordById = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const getId = await prisma.record.findFirst({
+            where: {
+                rec_id: +id
+            }
+        })
+        res.json({ getId, message: "Get record by id success!" })
+    } catch(err) {
+        next(err)
+        console.log(err)
+    }
+}
+
 exports.createCarRecord = async (req, res, next) => {
     try {
         const value = await createRecord.validateAsync(req.body);

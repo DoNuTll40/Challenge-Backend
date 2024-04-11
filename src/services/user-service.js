@@ -32,3 +32,11 @@ exports.getUserById = (id) => {
     },
   });
 };
+
+exports.checkPhone = (user_phone) => {
+  return prisma.users.findFirst({
+    where: {
+      user_phone,
+    }
+  })
+}
