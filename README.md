@@ -25,3 +25,7 @@ npm i @prisma/client
 | DELETE | http://localhost:8000/car/delete/:id | delete record success | no | number id |
 
 Copyright 64CS125 Nuttawoot Chawna
+
+### Path Authen
+
+### Path Admin
