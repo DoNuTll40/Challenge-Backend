@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,12 +7,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model record { // name tabel "record"
-  rec_id Int @id @default(autoincrement())
-  rec_regiscar String @unique
-  rec_brand String
-  rec_model String
-  rec_detail String
+enum Role {
+  admin
+  users
+}
+
+model users {
+  user_id        Int      @id @default(autoincrement())
+  user_email     String
+  user_password  String
+  user_firstname String
+  user_lastname  String
+  user_phone     String   @unique @db.VarChar(10)
+  user_role      Role     @default(users)
+  record         record[]
+}
+
+model record {
+  rec_id        Int      @id @default(autoincrement())
+  rec_regiscar  String   @unique
+  rec_brand     String
+  rec_model     String
+  rec_color     String
+  rec_detail    String
+  users         users    @relation(fields: [user_id], references: [user_id])
+  user_id       Int
   rec_create_at DateTime @default(now())
   rec_update_at DateTime @updatedAt
 }
